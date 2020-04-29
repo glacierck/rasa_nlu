@@ -108,6 +108,8 @@ def shell(args: argparse.Namespace):
 
         rasa.nlu.run.run_cmdline(nlu_model)
     else:
+        shutil.rmtree(model_path)  # Clean
+        
         import rasa.cli.run
 
         rasa.cli.run.run(args)
